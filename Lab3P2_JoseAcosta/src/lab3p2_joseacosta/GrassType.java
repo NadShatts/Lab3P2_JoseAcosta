@@ -18,6 +18,42 @@ public class GrassType extends Pokemon {
         this.habitad = habitad;
         this.dominio = dominio;
     }
+
+    public String getHabitad() {
+        return habitad;
+    }
+
+    public int getDominio() {
+        return dominio;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getNumeroEntrada() {
+        return numeroEntrada;
+    }
+
+    public String getNaturaleza() {
+        return naturaleza;
+    }
+
+    public boolean getAtrapado() {
+        return atrapado;
+    }
+
+    public Pokeball getPokemon() {
+        return pokemon;
+    }
+    
+    
+
+    @Override
+    public String toString() {
+        return "GrassType:  Nombre: "+getNombre()+ " | Numero de entrada: " +getNumeroEntrada()+ " | Habitad: " +getHabitad()+ " | Dominio:" +getDominio();
+    }
+    
     
     
 }

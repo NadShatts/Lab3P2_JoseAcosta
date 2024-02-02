@@ -33,7 +33,7 @@ public class FireType extends Pokemon {
         return naturaleza;
     }
 
-    public boolean isAtrapado() {
+    public boolean getAtrapado() {
         return atrapado;
     }
 
@@ -68,7 +68,7 @@ public class FireType extends Pokemon {
     
     @Override
     public String toString() {
-        return "FireType:  Nombre: "+getNombre()+ " | Numero de entrada: " +getNumeroEntrada()+ " | Naturaleza: "+getNaturaleza();
+        return "FireType:  Nombre: "+getNombre()+ " | Numero de entrada: " +getNumeroEntrada()+ " | Naturaleza: "+getNaturaleza()+ " | Atrapado: "+getAtrapado()+ " | Potencia de Llamas: " +getPotenciaLlamas();
     }
 
     
