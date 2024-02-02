@@ -17,8 +17,6 @@ public class Lab3P2_JoseAcosta {
     /**
      * @param args the command line arguments
      */
-    ArrayList<Pokemon> pokemon = new ArrayList();
-
     public static void main(String[] args) {
 
         ArrayList<Pokemon> pokemon = new ArrayList();
@@ -37,7 +35,7 @@ public class Lab3P2_JoseAcosta {
             System.out.println("5. Capturar Pokemon");
             System.out.println("6. Modificar Pokemon");
             System.out.println("7. Salir.");
-            System.out.println("Ingrese una opcion: ");
+            System.out.print("Ingrese una opcion: ");
             opcion = entrada.nextInt();
 
             switch (opcion) {
@@ -46,38 +44,50 @@ public class Lab3P2_JoseAcosta {
                     int opcion2;
                     do {
                         System.out.println("Bienvenido a Ingresar Pokemon :) ");
-                        System.out.println("Que tipo de Pokemon desea ingresar: ");
+                        System.out.println("¿Que tipo de Pokemon desea ingresar?: ");
                         System.out.println("1. Pokemon Tipo Fuego");
                         System.out.println("2. Pokemon Tipo Agua");
                         System.out.println("3. Pokemon tipo Grass");
                         System.out.println("4. Salir");
-                        System.out.println("Ingrese una opcion: ");
+                        System.out.print("Ingrese una opcion: ");
                         opcion2 = entrada.nextInt();
 
                         switch (opcion2) {
                             case 1:
-                                System.out.println("Ingrese el nombre del Pokemon: ");
+                                System.out.print("Ingrese el nombre del Pokemon: ");
                                 String nombreFuego = entrada.next();
-                                System.out.println("Ingrese un numero de entrada: ");
+                                System.out.print("Ingrese un numero de entrada: ");
                                 int numeroEntradaFuego = entrada.nextInt();
-                                System.out.println("Ingrese su naturaleza(Timido, Energetico, Misterioso): ");
-                                String naturalezaFuego = entrada.next();
-                                System.out.println("Ingrese su potencia en llama: ");
+                                String naturalezaFuego;
+                                do {
+                                    System.out.print("Ingrese su naturaleza (timido, energetico, miseterioso): ");
+                                    naturalezaFuego = entrada.next();
+                                    if (!(naturalezaFuego.equalsIgnoreCase("timido") || naturalezaFuego.equalsIgnoreCase("energetico") || naturalezaFuego.equalsIgnoreCase("misterioso"))) {
+                                        System.out.println("Naturaleza inválida. Por favor, ingrese timido, energetico o misterioso.");
+                                    }
+                                } while (!(naturalezaFuego.equalsIgnoreCase("timido") || naturalezaFuego.equalsIgnoreCase("energetico") || naturalezaFuego.equalsIgnoreCase("misterioso")));
+                                System.out.print("Ingrese su potencia en llama: ");
                                 int potenciaLlama = entrada.nextInt();
                                 pokemon.add(new FireType(potenciaLlama, nombreFuego, numeroEntradaFuego, naturalezaFuego, false, null));
                                 System.out.println("Pokemon de fuego agregado exitosamente...");
                                 break;
 
                             case 2:
-                                System.out.println("Ingrese el nombre del Pokemon: ");
+                                System.out.print("Ingrese el nombre del Pokemon: ");
                                 String nombreAgua = entrada.next();
-                                System.out.println("Ingrese un numero de entrada: ");
+                                System.out.print("Ingrese un numero de entrada: ");
                                 int numeroEntradaAgua = entrada.nextInt();
-                                System.out.println("Ingrese su naturaleza(Timido, Energetico, Misterioso): ");
-                                String naturalezaAgua = entrada.next();
-                                System.out.println("Puede vivir fuera del agua(true, false)");
+                                String naturalezaAgua;
+                                do {
+                                    System.out.print("Ingrese su naturaleza (timido, energetico, miseterioso): ");
+                                    naturalezaAgua = entrada.next();
+                                    if (!(naturalezaAgua.equalsIgnoreCase("timido") || naturalezaAgua.equalsIgnoreCase("energetico") || naturalezaAgua.equalsIgnoreCase("misterioso"))) {
+                                        System.out.println("Naturaleza inválida. Por favor, ingrese timido, energetico o misterioso.");
+                                    }
+                                } while (!(naturalezaAgua.equalsIgnoreCase("timido") || naturalezaAgua.equalsIgnoreCase("energetico") || naturalezaAgua.equalsIgnoreCase("misterioso")));
+                                System.out.print("Puede vivir fuera del agua(true, false)");
                                 boolean puedeVivir = entrada.nextBoolean();
-                                System.out.println("Ingrese la rapidez: ");
+                                System.out.print("Ingrese la rapidez: ");
                                 int rapidez = entrada.nextInt();
 
                                 pokemon.add(new WaterType(puedeVivir, rapidez, nombreAgua, numeroEntradaAgua, naturalezaAgua, false, null));
@@ -86,16 +96,32 @@ public class Lab3P2_JoseAcosta {
                                 break;
 
                             case 3:
-                                System.out.println("Ingrese el nombre del Pokemon: ");
+                                System.out.print("Ingrese el nombre del Pokemon: ");
                                 String nombreGrass = entrada.next();
-                                System.out.println("Ingrese un numero de entrada: ");
+                                System.out.print("Ingrese un numero de entrada: ");
                                 int numeroEntradaGrass = entrada.nextInt();
-                                System.out.println("Ingrese su naturaleza(Timido, Energetico, Misterioso): ");
-                                String naturalezaGrass = entrada.next();
-                                System.out.println("Ingrese el habitad: ");
+                                String naturalezaGrass;
+                                do {
+                                    System.out.print("Ingrese su naturaleza (timido, energetico, miseterioso): ");
+                                    naturalezaGrass = entrada.next();
+                                    if (!(naturalezaGrass.equalsIgnoreCase("timido") || naturalezaGrass.equalsIgnoreCase("energetico") || naturalezaGrass.equalsIgnoreCase("misterioso"))) {
+                                        System.out.println("Naturaleza inválida. Por favor, ingrese timido, energetico o misterioso.");
+                                    }
+                                } while (!(naturalezaGrass.equalsIgnoreCase("timido") || naturalezaGrass.equalsIgnoreCase("energetico") || naturalezaGrass.equalsIgnoreCase("misterioso")));
+                                System.out.print("Ingrese el habitad: ");
                                 String habitad = entrada.next();
-                                System.out.println("Ingrese el dominio(0-100): ");
-                                int dominio = entrada.nextInt();
+                                int dominio;
+                                do {
+                                    System.out.print("Ingrese el dominio (0-100): ");
+                                    while (!entrada.hasNextInt()) {
+                                        System.out.println("Por favor, ingrese un número válido.");
+                                        entrada.next();
+                                    }
+                                    dominio = entrada.nextInt();
+                                    if (dominio < 0 || dominio > 100) {
+                                        System.out.println("El dominio debe estar en el rango de 0 a 100.");
+                                    }
+                                } while (dominio < 0 || dominio > 100);
 
                                 pokemon.add(new GrassType(habitad, dominio, nombreGrass, numeroEntradaGrass, naturalezaGrass, false, null));
                                 System.out.println("Pokemon de planta agregado exitosamente...");
@@ -106,12 +132,22 @@ public class Lab3P2_JoseAcosta {
                     break;
                 case 2:
                     System.out.println("Bienvenido a crear su pokebola....");
-                    System.out.println("Ingrese el color de su pokebola: ");
+                    System.out.print("Ingrese el color de su pokebola: ");
                     String color = entrada.next();
-                    System.out.println("Ingrese el numero de serie: ");
+                    System.out.print("Ingrese el numero de serie: ");
                     int numeroSerie = entrada.nextInt();
-                    System.out.println("Ingrese la efiencia de su pokeball(1-3): ");
-                    int eficiencia = entrada.nextInt();
+                    int eficiencia;
+                    do {
+                        System.out.print("Ingrese la eficiencia de su Pokébola (1-3): ");
+                        while (!entrada.hasNextInt()) {
+                            System.out.println("Por favor, ingrese un número válido.");
+                            entrada.next();
+                        }
+                        eficiencia = entrada.nextInt();
+                        if (eficiencia < 1 || eficiencia > 3) {
+                            System.out.println("La eficiencia debe estar en el rango de 1 a 3.");
+                        }
+                    } while (eficiencia < 1 || eficiencia > 3);
 
                     pokeball.add(new Pokeball(color, numeroSerie, eficiencia));
                     System.out.println("Pokeball agregada exitosamente....");
@@ -121,25 +157,37 @@ public class Lab3P2_JoseAcosta {
                     if (pokemon.isEmpty()) {
                         System.out.println("No hay ningun pokemon ingresado hasta el momento...");
                     } else {
-                        System.out.println("Lista de Pokémon por Tipo:");
+                        System.out.println("Su lista actual de Pokemons es la siguiente: ");
+                        System.out.println("");
+
                         System.out.println("Tipo Fuego:");
+                        System.out.println("");
                         for (Pokemon p : pokemon) {
                             if (p instanceof FireType) {
+
                                 System.out.println(p.toString());
+                                System.out.println("");
+
                             }
                         }
 
                         System.out.println("Tipo Agua:");
+                        System.out.println("");
                         for (Pokemon p : pokemon) {
                             if (p instanceof WaterType) {
+
                                 System.out.println(p.toString());
+                                System.out.println("");
                             }
                         }
 
                         System.out.println("Tipo Planta:");
+                        System.out.println("");
                         for (Pokemon p : pokemon) {
                             if (p instanceof GrassType) {
+
                                 System.out.println(p.toString());
+                                System.out.println("");
                             }
                         }
                     }
@@ -253,222 +301,11 @@ public class Lab3P2_JoseAcosta {
                     break;
 
                 case 5:
-                    if (pokemon.isEmpty() && pokeball.isEmpty()) {
-                        System.out.println("No hay ningun pokemon o pokeball registrada hasta el momento...");
-                    } else {
-                    }
-                    if (pokeball.isEmpty()) {
-                        System.out.println("No hay Pokébolas disponibles para capturar Pokémon");
-                    } else {
-                        System.out.println("Elige una Pokébola para intentar capturar al Pokémon:");
-                        for (int i = 0; i < pokeball.size(); i++) {
-                            System.out.println((i + 1) + ". " + pokeball.get(i).getColor() + " - Eficiencia: " + pokeball.get(i).getEficiencia());
-                        }
-
-                        int opcionPokebola = entrada.nextInt();
-
-                        if (opcionPokebola < 1 || opcionPokebola > pokeball.size()) {
-                            System.out.println("Opción de Pokébola inválida");
-                        } else {
-                            Random rand = new Random();
-                            ArrayList<Pokemon> pokemonesDisponibles = new ArrayList<>();
-
-                            for (Pokemon p : pokemon) {
-                                if (!p.isAtrapado()) {
-                                    pokemonesDisponibles.add(p);
-                                }
-                            }
-
-                            if (pokemonesDisponibles.isEmpty()) {
-                                System.out.println("No hay Pokémon disponibles para capturar en este momento");
-                            } else {
-                                Pokemon pokemonAtrapar = pokemonesDisponibles.get(rand.nextInt(pokemonesDisponibles.size()));
-                                System.out.println("¡Ha aparecido un Pokémon! Es " + pokemonAtrapar.getNombre());
-
-                                System.out.println("¿Deseas intentar capturarlo o huir del encuentro? (capturar/huir)");
-                                String decision = entrada.next();
-
-                                if (decision.equals("huir")) {
-                                    System.out.println("Has huido del encuentro");
-                                } else {
-                                    int eficienciaPokebolaElegida = pokeball.get(opcionPokebola - 1).getEficiencia();
-                                    int chanceCaptura = rand.nextInt(3) + 1;
-
-                                    if (chanceCaptura <= eficienciaPokebolaElegida) {
-                                        pokemonAtrapar.setAtrapado(true);
-                                        pokemonAtrapar.setPokemon(pokeball.get(opcionPokebola - 1));
-                                        System.out.println("¡Has capturado a " + pokemonAtrapar.getNombre() + " con éxito!");
-                                        pokeball.remove(opcionPokebola - 1);
-                                    } else {
-                                        System.out.println("No has logrado capturar a " + pokemonAtrapar.getNombre());
-                                        pokeball.remove(opcionPokebola - 1);
-                                    }
-                                }
-                            }
-                        }
-                    }
-
+                    //me tira un error de sintaxis cuando intento capturarlo xd, lo arreglo en un momento.
                     break;
 
                 case 6:
-                    if (pokemon.isEmpty()) {
-                        System.out.println("No hay ningún Pokémon registrado hasta el momento....");
-                    } else {
-                        System.out.println("Bienvenido a modificar su Pokémon capturado....");
-                        System.out.println("Ingrese el nombre del Pokémon que desea modificar: ");
-                        String nombreModificar = entrada.next();
-
-                        Pokemon pokemonModificar = null;
-                        for (Pokemon p : pokemon) {
-                            if (p.getNombre().equalsIgnoreCase(nombreModificar) && p.isAtrapado()) {
-                                pokemonModificar = p;
-                                break;
-                            }
-                        }
-
-                        if (pokemonModificar != null) {
-                            System.out.println("Selecciona el tipo de Pokémon que deseas modificar:");
-                            System.out.println("1. Pokemon tipo Fuego");
-                            System.out.println("2. Pokemon tipo Agua");
-                            System.out.println("3. Pokemon tipo Planta");
-                            System.out.println("4. Salir");
-                            int opcion3 = entrada.nextInt();
-
-                            switch (opcion3) {
-                                case 1:
-                                    if (pokemonModificar instanceof FireType) {
-                                        System.out.println("Selecciona qué atributo deseas modificar:");
-                                        System.out.println("1. Nombre");
-                                        System.out.println("2. Numero entrada");
-                                        System.out.println("3. Modificar potencia de llama");
-                                        System.out.println("4. Salir");
-
-                                        int opcionModificar = entrada.nextInt();
-
-                                        switch (opcionModificar) {
-                                            case 1:
-                                                System.out.println("Seleccione el nuevo Nombre: ");
-                                                String nuevoNombre = entrada.next();
-                                                ((FireType) pokemonModificar).setNombre(nuevoNombre);
-                                                System.out.println("nuevo nombre modificado exitosamente");
-                                                break;
-                                            case 2:
-                                                System.out.println("Ingrese el nuevo numero de entrada: ");
-                                                int nuevoNumero = entrada.nextInt();
-                                                ((FireType) pokemonModificar).setNumeroEntrada(nuevoNumero);
-                                                System.out.println("Nuevo numero de entrada modificado correctamente..");
-                                                break;
-                                            case 3:
-                                                System.out.println("Ingrese la nueva potencia de llama: ");
-                                                int nuevaPotencia = entrada.nextInt();
-                                                ((FireType) pokemonModificar).setPotenciaLlamas(nuevaPotencia);
-                                                System.out.println("Potencia de llama modificada exitosamente.");
-                                                break;
-                                            case 4:
-                                                System.out.println("Saliendo del menú de modificación...");
-                                                break;
-                                            default:
-                                                System.out.println("Opción no válida.");
-                                        }
-                                    } else {
-                                        System.out.println("El Pokémon no es de tipo Fuego.");
-                                    }
-                                    break;
-
-                                case 2:
-                                    if (pokemonModificar instanceof WaterType) {
-                                        System.out.println("Selecciona qué atributo deseas modificar:");
-                                        System.out.println("1. Nombre");
-                                        System.out.println("2. Numero de entrada");
-                                        System.out.println("3. Puede vivir fuera del agua");
-                                        System.out.println("4. Salir");
-
-                                        int opcionModificar = entrada.nextInt();
-
-                                        switch (opcionModificar) {
-                                            case 1:
-                                                System.out.println("Ingresa el nuevo nombre: ");
-                                                String nuevoNombre = entrada.next();
-                                                ((WaterType) pokemonModificar).setNombre(nuevoNombre);
-                                                System.out.println("Nombre modificado correctamente...");
-                                                break;
-
-                                            case 2:
-                                                System.out.println("Ingrese el nuevo numero de entrada: ");
-                                                int nuevoNumero = entrada.nextInt();
-                                                ((WaterType) pokemonModificar).setNumeroEntrada(nuevoNumero);
-                                                System.out.println("Numero de entrada modificado correctamente");
-                                                break;
-
-                                            case 3:
-                                                System.out.println("Ingrese si se puede salir fuera del agua(true, false) ");
-                                                boolean nuevoValor = entrada.nextBoolean();
-                                                ((WaterType) pokemonModificar).setVivir(nuevoValor);
-                                                System.out.println("Valor modificado exitosamente.");
-                                                break;
-                                            case 4:
-                                                System.out.println("Saliendo del menú de modificación...");
-                                                break;
-                                            default:
-                                                System.out.println("Opción no válida.");
-                                        }
-                                    } else {
-                                        System.out.println("El Pokémon no es de tipo Agua.");
-                                    }
-                                    break;
-
-                                case 3:
-                                    if (pokemonModificar instanceof GrassType) {
-                                        System.out.println("Selecciona qué atributo deseas modificar:");
-                                        System.out.println("1, Nombre");
-                                        System.out.println("2. Numero");
-                                        System.out.println("4. Habitad");
-                                        System.out.println("5. Salir");
-
-                                        int opcionModificar = entrada.nextInt();
-
-                                        switch (opcionModificar) {
-                                            case 1:
-                                                System.out.println("Ingrese el nuevo Nombre: ");
-                                                String nuevoNombre = entrada.next();
-                                                ((GrassType) pokemonModificar).setNombre(nuevoNombre);
-                                                System.out.println("Nombre modificado correctamente...");
-                                                break;
-
-                                            case 2:
-                                                System.out.println("Ingrese el nuevo numero de entrada: ");
-                                                int nuevoNumero = entrada.nextInt();
-                                                ((GrassType) pokemonModificar).setNumeroEntrada(nuevoNumero);
-                                                System.out.println("Numero modificado correctamente....");
-                                                break;
-                                            case 3:
-                                                System.out.println("Ingrese el nuevo hábitat: ");
-                                                String nuevoHabitat = entrada.next();
-                                                ((GrassType) pokemonModificar).setHabitad(nuevoHabitat);
-                                                System.out.println("Hábitat modificado exitosamente.");
-                                                break;
-                                            case 4:
-                                                System.out.println("Saliendo del menú de modificación...");
-                                                break;
-                                            default:
-                                                System.out.println("Opción no válida.");
-                                        }
-                                    } else {
-                                        System.out.println("El Pokémon no es de tipo Planta.");
-                                    }
-                                    break;
-
-                                case 4:
-                                    System.out.println("Saliendo del menú de modificación...");
-                                    break;
-
-                                default:
-                                    System.out.println("Opción no válida.");
-                            }
-                        } else {
-                            System.out.println("No se encontró un Pokémon capturado con ese nombre.");
-                        }
-                    }
+                    //lo tenia malo este tambien xd
                     break;
 
                 case 7:

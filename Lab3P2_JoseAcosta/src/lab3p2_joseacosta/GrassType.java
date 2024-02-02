@@ -79,7 +79,7 @@ public class GrassType extends Pokemon {
 
     @Override
     public String toString() {
-        return "GrassType:  Nombre: "+getNombre()+ " | Numero de entrada: " +getNumeroEntrada()+ " | Habitad: " +getHabitad()+ " | Dominio:" +getDominio();
+        return "GrassType:  Nombre: "+getNombre()+ " | Numero de entrada: " +getNumeroEntrada()+ " | Habitad: " +getHabitad()+ " | Dominio:" +getDominio()+  " | Atrapado"+getAtrapado()+ " | Pokeball: "+getPokemon();
     }
     
     
