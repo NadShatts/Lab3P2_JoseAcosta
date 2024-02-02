@@ -21,4 +21,30 @@ public class Pokeball {
     }
     
     
+
+    public String getColor() {
+        return color;
+    }
+
+    public int getNumeroSerie() {
+        return numeroSerie;
+    }
+
+    public int getEficiencia() {
+        return eficiencia;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setNumeroSerie(int numeroSerie) {
+        this.numeroSerie = numeroSerie;
+    }
+
+    public void setEficiencia(int eficiencia) {
+        this.eficiencia = eficiencia;
+    }
+    
+    
 }

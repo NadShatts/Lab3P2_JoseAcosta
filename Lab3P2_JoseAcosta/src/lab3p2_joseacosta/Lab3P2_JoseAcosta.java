@@ -5,6 +5,7 @@
 package lab3p2_joseacosta;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -124,7 +125,7 @@ public class Lab3P2_JoseAcosta {
                         System.out.println("Tipo Fuego:");
                         for (Pokemon p : pokemon) {
                             if (p instanceof FireType) {
-                                System.out.println( p.toString());
+                                System.out.println(p.toString());
                             }
                         }
 
@@ -146,115 +147,194 @@ public class Lab3P2_JoseAcosta {
                     break;
 
                 case 4:
-                     if (pokemon.isEmpty()) {
-    System.out.println("No hay ningún Pokémon ingresado hasta el momento...");
-} else {
-    System.out.println("Seleccione el tipo de Pokémon que desea eliminar:");
-    System.out.println("1. Tipo Fuego");
-    System.out.println("2. Tipo Agua");
-    System.out.println("3. Tipo Planta");
-                         System.out.println("Ingrese una opcion para eliminar: ");
-    int tipoEliminar = entrada.nextInt();
+                    if (pokemon.isEmpty()) {
+                        System.out.println("No hay ningún Pokémon ingresado hasta el momento...");
+                    } else {
+                        System.out.println("Seleccione el tipo de Pokémon que desea eliminar:");
+                        System.out.println("1. Tipo Fuego");
+                        System.out.println("2. Tipo Agua");
+                        System.out.println("3. Tipo Planta");
+                        System.out.println("Ingrese una opcion para eliminar: ");
+                        int tipoEliminar = entrada.nextInt();
 
-    switch (tipoEliminar) {
-        case 1:
-            System.out.println("Pokémon Tipo Fuego:");
-            int contadorFuego = 1;
-            for (int i = 0; i < pokemon.size(); i++) {
-                if (pokemon.get(i) instanceof FireType) {
-                    System.out.println(contadorFuego + ". " + pokemon.get(i).toString());
-                    contadorFuego++;
-                }
-            }
-            System.out.print("Ingrese el numero del pokemon a eliminar: ");
-            int indiceEliminarFuego = entrada.nextInt();
-            if (indiceEliminarFuego > 0 && indiceEliminarFuego <= contadorFuego - 1) {
-                int indiceReal = 0;
-                for (int i = 0; i < pokemon.size(); i++) {
-                    if (pokemon.get(i) instanceof FireType) {
-                        if (indiceEliminarFuego == 1) {
-                            System.out.println("Su pokemon de fuego ha sido eliminado correctamente....");
-                            pokemon.remove(i);
-                            break;
+                        switch (tipoEliminar) {
+                            case 1:
+                                System.out.println("Pokémon Tipo Fuego:");
+                                int contadorFuego = 1;
+                                for (int i = 0; i < pokemon.size(); i++) {
+                                    if (pokemon.get(i) instanceof FireType) {
+                                        System.out.println(contadorFuego + ". " + pokemon.get(i).toString());
+                                        contadorFuego++;
+                                    }
+                                }
+                                System.out.print("Ingrese el numero del pokemon a eliminar: ");
+                                int indiceEliminarFuego = entrada.nextInt();
+                                if (indiceEliminarFuego > 0 && indiceEliminarFuego <= contadorFuego - 1) {
+                                    int indiceReal = 0;
+                                    for (int i = 0; i < pokemon.size(); i++) {
+                                        if (pokemon.get(i) instanceof FireType) {
+                                            if (indiceEliminarFuego == 1) {
+                                                System.out.println("Su pokemon de fuego ha sido eliminado correctamente....");
+                                                pokemon.remove(i);
+                                                break;
+                                            }
+                                            indiceEliminarFuego--;
+
+                                        }
+                                    }
+                                } else {
+                                    System.out.println("Índice inválido");
+                                }
+                                break;
+
+                            case 2:
+                                System.out.println("Pokémon Tipo Agua:");
+                                int contadorAgua = 1;
+                                for (int i = 0; i < pokemon.size(); i++) {
+                                    if (pokemon.get(i) instanceof WaterType) {
+                                        System.out.println(contadorAgua + ". " + pokemon.get(i).toString());
+                                        contadorAgua++;
+                                    }
+                                }
+                                System.out.print("Ingrese el numero del pokemon a eliminar: ");
+                                int indiceEliminarAgua = entrada.nextInt();
+                                if (indiceEliminarAgua > 0 && indiceEliminarAgua <= contadorAgua - 1) {
+                                    int indiceReal = 0;
+                                    for (int i = 0; i < pokemon.size(); i++) {
+                                        if (pokemon.get(i) instanceof WaterType) {
+                                            if (indiceEliminarAgua == 1) {
+                                                System.out.println("Su pokemon de Agua ha sido eliminado correctamente....");
+                                                pokemon.remove(i);
+                                                break;
+                                            }
+                                            indiceEliminarAgua--;
+
+                                        }
+                                    }
+                                } else {
+                                    System.out.println("Índice inválido");
+                                }
+                                break;
+
+                            case 3:
+                                System.out.println("Pokémon Tipo Planta:");
+                                int contadorPlanta = 1;
+                                for (int i = 0; i < pokemon.size(); i++) {
+                                    if (pokemon.get(i) instanceof GrassType) {
+                                        System.out.println(contadorPlanta + ". " + pokemon.get(i).toString());
+                                        contadorPlanta++;
+                                    }
+                                }
+                                System.out.print("Ingrese el numero del pokemon a eliminar: ");
+                                int indiceEliminarPlanta = entrada.nextInt();
+                                if (indiceEliminarPlanta > 0 && indiceEliminarPlanta <= contadorPlanta - 1) {
+                                    int indiceReal = 0;
+                                    for (int i = 0; i < pokemon.size(); i++) {
+                                        if (pokemon.get(i) instanceof GrassType) {
+                                            if (indiceEliminarPlanta == 1) {
+                                                System.out.println("Su pokemon de Tierra o Grass ha sido eliminado correctamente....");
+                                                pokemon.remove(i);
+
+                                                break;
+                                            }
+                                            indiceEliminarPlanta--;
+                                        }
+                                    }
+                                } else {
+                                    System.out.println("Índice inválido");
+                                }
+                                break;
+
+                            default:
+                                System.out.println("Tipo de Pokémon no válido.");
+                                break;
                         }
-                        indiceEliminarFuego--;
-                        
                     }
-                }
-            } else {
-                System.out.println("Índice inválido");
-            }
-            break;
-
-        case 2:
-            System.out.println("Pokémon Tipo Agua:");
-            int contadorAgua = 1;
-            for (int i = 0; i < pokemon.size(); i++) {
-                if (pokemon.get(i) instanceof WaterType) {
-                    System.out.println(contadorAgua + ". " + pokemon.get(i).toString());
-                    contadorAgua++;
-                }
-            }
-            System.out.print("Ingrese el numero del pokemon a eliminar: ");
-            int indiceEliminarAgua = entrada.nextInt();
-            if (indiceEliminarAgua > 0 && indiceEliminarAgua <= contadorAgua - 1) {
-                int indiceReal = 0;
-                for (int i = 0; i < pokemon.size(); i++) {
-                    if (pokemon.get(i) instanceof WaterType) {
-                        if (indiceEliminarAgua == 1) {
-                            System.out.println("Su pokemon de Agua ha sido eliminado correctamente....");
-                            pokemon.remove(i);
-                            break;
-                        }
-                        indiceEliminarAgua--;
-                         
-                    }
-                }
-            } else {
-                System.out.println("Índice inválido");
-            }
-            break;
-
-        case 3:
-            System.out.println("Pokémon Tipo Planta:");
-            int contadorPlanta = 1;
-            for (int i = 0; i < pokemon.size(); i++) {
-                if (pokemon.get(i) instanceof GrassType) {
-                    System.out.println(contadorPlanta + ". " + pokemon.get(i).toString());
-                    contadorPlanta++;
-                }
-            }
-            System.out.print("Ingrese el numero del pokemon a eliminar: ");
-            int indiceEliminarPlanta = entrada.nextInt();
-            if (indiceEliminarPlanta > 0 && indiceEliminarPlanta <= contadorPlanta - 1) {
-                int indiceReal = 0;
-                for (int i = 0; i < pokemon.size(); i++) {
-                    if (pokemon.get(i) instanceof GrassType) {
-                        if (indiceEliminarPlanta == 1) {
-                            System.out.println("Su pokemon de Tierra o Grass ha sido eliminado correctamente....");
-                            pokemon.remove(i);
-                             
-                            break;
-                        }
-                        indiceEliminarPlanta--;       
-                    }
-                }
-            } else {
-                System.out.println("Índice inválido");
-            }
-            break;
-
-        default:
-            System.out.println("Tipo de Pokémon no válido.");
-            break;
-    }
-}
-                     break;
+                    break;
 
                 case 5:
+                    if (pokemon.isEmpty() && pokeball.isEmpty()) {
+                        System.out.println("No hay ningun pokemon o pokeball registrada hasta el momento...");
+                    } else {
+                    }
+                    if (pokeball.isEmpty()) {
+                        System.out.println("No hay Pokébolas disponibles para capturar Pokémon");
+                    } else {
+                        System.out.println("Elige una Pokébola para intentar capturar al Pokémon:");
+                        for (int i = 0; i < pokeball.size(); i++) {
+                            System.out.println((i + 1) + ". " + pokeball.get(i).getColor() + " - Eficiencia: " + pokeball.get(i).getEficiencia());
+                        }
+
+                        int opcionPokebola = entrada.nextInt();
+
+                        if (opcionPokebola < 1 || opcionPokebola > pokeball.size()) {
+                            System.out.println("Opción de Pokébola inválida");
+                        } else {
+                            Random rand = new Random();
+                            ArrayList<Pokemon> pokemonesDisponibles = new ArrayList<>();
+
+                            for (Pokemon p : pokemon) {
+                                if (!p.isAtrapado()) {
+                                    pokemonesDisponibles.add(p);
+                                }
+                            }
+
+                            if (pokemonesDisponibles.isEmpty()) {
+                                System.out.println("No hay Pokémon disponibles para capturar en este momento");
+                            } else {
+                                Pokemon pokemonAtrapar = pokemonesDisponibles.get(rand.nextInt(pokemonesDisponibles.size()));
+                                System.out.println("¡Ha aparecido un Pokémon! Es " + pokemonAtrapar.getNombre());
+
+                                System.out.println("¿Deseas intentar capturarlo o huir del encuentro? (capturar/huir)");
+                                String decision = entrada.next();
+
+                                if (decision.equals("huir")) {
+                                    System.out.println("Has huido del encuentro");
+                                } else {
+                                    int eficienciaPokebolaElegida = pokeball.get(opcionPokebola - 1).getEficiencia();
+                                    int chanceCaptura = rand.nextInt(3) + 1;
+
+                                    if (chanceCaptura <= eficienciaPokebolaElegida) {
+                                        pokemonAtrapar.setAtrapado(true);
+                                        pokemonAtrapar.setPokemon(pokeball.get(opcionPokebola - 1));
+                                        System.out.println("¡Has capturado a " + pokemonAtrapar.getNombre() + " con éxito!");
+                                        pokeball.remove(opcionPokebola - 1);
+                                    } else {
+                                        System.out.println("No has logrado capturar a " + pokemonAtrapar.getNombre());
+                                        pokeball.remove(opcionPokebola - 1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                     break;
 
                 case 6:
+                    if (pokemon.isEmpty()) {
+                        System.out.println("No hay ningun pokemon registrado hasta el momento....");
+                    } else {
+                        int opcion3;
+                        System.out.println("Bienvenido a modificar su pokemon....");
+                        System.out.println("Ingrese que tipo de Pokemon desea modificar: ");
+                        System.out.println("1. Pokemon tipo Fuego");
+                        System.out.println("2. Pokemon tipo Agua");
+                        System.out.println("3. Pokemon tipo Grass");
+                        System.out.println("Ingrese una opcion: ");
+                        opcion3 = entrada.nextInt();
+
+                        switch (opcion3) {
+                            case 1:
+
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            default:
+                                System.out.println("Ingrese una opcion valida para el menu");
+                        }
+                    }
                     break;
 
                 case 7:

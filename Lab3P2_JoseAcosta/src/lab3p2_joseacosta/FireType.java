@@ -68,7 +68,7 @@ public class FireType extends Pokemon {
     
     @Override
     public String toString() {
-        return "FireType:  Nombre: "+getNombre()+ " | Numero de entrada: " +getNumeroEntrada()+ " | Naturaleza: "+getNaturaleza()+ " | Atrapado: "+getAtrapado()+ " | Potencia de Llamas: " +getPotenciaLlamas();
+        return "FireType:  Nombre: "+getNombre()+ " | Numero de entrada: " +getNumeroEntrada()+ " | Naturaleza: "+getNaturaleza()+ " | Atrapado: "+getAtrapado()+ " | Potencia de Llamas: " +getPotenciaLlamas()+ " | Pokeball: " +getPokemon();
     }
 
     
