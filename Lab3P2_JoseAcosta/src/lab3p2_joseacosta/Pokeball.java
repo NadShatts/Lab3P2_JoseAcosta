@@ -9,5 +9,10 @@ package lab3p2_joseacosta;
  * @author josed
  */
 public class Pokeball {
+ 
+    String color;
+    int numeroSerie;
+    int eficiencia;
+    
     
 }

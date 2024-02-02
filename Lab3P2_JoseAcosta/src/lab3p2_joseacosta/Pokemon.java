@@ -20,8 +20,8 @@ public class Pokemon {
         this.nombre = nombre;
         this.numeroEntrada = numeroEntrada;
         this.naturaleza = naturaleza;
-        this.atrapado = atrapado;
-        this.pokemon = pokemon;
+        this.atrapado = false;
+        this.pokemon = null;
     }
 
     public String getNombre() {
