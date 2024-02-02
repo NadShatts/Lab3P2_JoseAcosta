@@ -24,6 +24,8 @@ public class Pokemon {
         this.pokemon = null;
     }
 
+    
+
     public String getNombre() {
         return nombre;
     }

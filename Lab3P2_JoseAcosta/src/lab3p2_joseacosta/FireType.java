@@ -12,25 +12,63 @@ public class FireType extends Pokemon {
     
     int potenciaLlamas;
 
-    public FireType(int potenciaLlamas, String nombre, int numeroEntrada, String naturaleza, boolean atrapado, Pokeball pokemon) {
-        super(nombre, numeroEntrada, naturaleza, atrapado, pokemon);
+        public FireType(int potenciaLlamas, String nombre, int numeroEntrada, String naturaleza, boolean atrapado, Pokeball pokeball) {
+        super(nombre, numeroEntrada, naturaleza, atrapado, pokeball);
         this.potenciaLlamas = potenciaLlamas;
     }
 
-    
-
-    
-
-    public FireType(String nombre, int numeroEntrada, String naturaleza) {
-        super(nombre, numeroEntrada, naturaleza);
+    public int getPotenciaLlamas() {
+        return potenciaLlamas;
     }
 
-    
+    public String getNombre() {
+        return nombre;
+    }
 
+    public int getNumeroEntrada() {
+        return numeroEntrada;
+    }
+
+    public String getNaturaleza() {
+        return naturaleza;
+    }
+
+    public boolean isAtrapado() {
+        return atrapado;
+    }
+
+    public Pokeball getPokemon() {
+        return pokemon;
+    }
+
+    public void setPotenciaLlamas(int potenciaLlamas) {
+        this.potenciaLlamas = potenciaLlamas;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setNumeroEntrada(int numeroEntrada) {
+        this.numeroEntrada = numeroEntrada;
+    }
+
+    public void setNaturaleza(String naturaleza) {
+        this.naturaleza = naturaleza;
+    }
+
+    public void setAtrapado(boolean atrapado) {
+        this.atrapado = atrapado;
+    }
+
+    public void setPokemon(Pokeball pokemon) {
+        this.pokemon = pokemon;
+    }
+       
     
     @Override
     public String toString() {
-        return "FireType{" + "potenciaLlamas=" + potenciaLlamas + '}';
+        return "FireType:  Nombre: "+getNombre()+ " | Numero de entrada: " +getNumeroEntrada()+ " | Naturaleza: "+getNaturaleza();
     }
 
     
