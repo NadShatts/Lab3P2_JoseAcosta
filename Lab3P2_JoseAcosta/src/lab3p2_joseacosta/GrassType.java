@@ -46,6 +46,34 @@ public class GrassType extends Pokemon {
     public Pokeball getPokemon() {
         return pokemon;
     }
+
+    public void setHabitad(String habitad) {
+        this.habitad = habitad;
+    }
+
+    public void setDominio(int dominio) {
+        this.dominio = dominio;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setNumeroEntrada(int numeroEntrada) {
+        this.numeroEntrada = numeroEntrada;
+    }
+
+    public void setNaturaleza(String naturaleza) {
+        this.naturaleza = naturaleza;
+    }
+
+    public void setAtrapado(boolean atrapado) {
+        this.atrapado = atrapado;
+    }
+
+    public void setPokemon(Pokeball pokemon) {
+        this.pokemon = pokemon;
+    }
     
     
 
