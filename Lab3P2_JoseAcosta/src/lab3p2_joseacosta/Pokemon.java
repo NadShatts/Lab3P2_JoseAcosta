@@ -68,8 +68,10 @@ public class Pokemon {
 
     @Override
     public String toString() {
-        return "Pokemon{" + "nombre=" + nombre + ", numeroEntrada=" + numeroEntrada + ", naturaleza=" + naturaleza + ", atrapado=" + atrapado + ", pokemon=" + pokemon + '}';
+        return "Pokemon: " + " | Nombre: " + nombre + " | Numero de Entrada: " + numeroEntrada + " | Naturaleza: " + naturaleza + " | Atrapado: " + atrapado;
     }
+
+
 
    
    

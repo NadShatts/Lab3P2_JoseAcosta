@@ -9,10 +9,10 @@ package lab3p2_joseacosta;
  * @author josed
  */
 public class FireType extends Pokemon {
-    
+
     int potenciaLlamas;
 
-        public FireType(int potenciaLlamas, String nombre, int numeroEntrada, String naturaleza, boolean atrapado, Pokeball pokeball) {
+    public FireType(int potenciaLlamas, String nombre, int numeroEntrada, String naturaleza, boolean atrapado, Pokeball pokeball) {
         super(nombre, numeroEntrada, naturaleza, atrapado, pokeball);
         this.potenciaLlamas = potenciaLlamas;
     }
@@ -64,13 +64,11 @@ public class FireType extends Pokemon {
     public void setPokemon(Pokeball pokemon) {
         this.pokemon = pokemon;
     }
-       
     
-    @Override
+
+
     public String toString() {
-        return "FireType:  Nombre: "+getNombre()+ " | Numero de entrada: " +getNumeroEntrada()+ " | Naturaleza: "+getNaturaleza()+ " | Atrapado: "+getAtrapado()+ " | Potencia de Llamas: " +getPotenciaLlamas()+ " | Numero de serie de Pokeball: " +getPokemon().getNumeroSerie();
+        return super.toString()+ " | Potencia de Llamas: " + getPotenciaLlamas();
     }
 
-    
-   
 }

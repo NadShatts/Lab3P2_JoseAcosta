@@ -19,8 +19,6 @@ public class Pokeball {
         this.numeroSerie = numeroSerie;
         this.eficiencia = eficiencia;
     }
-    
-    
 
     public String getColor() {
         return color;
@@ -45,6 +43,10 @@ public class Pokeball {
     public void setEficiencia(int eficiencia) {
         this.eficiencia = eficiencia;
     }
+
+
+    
+    
     
     
 }

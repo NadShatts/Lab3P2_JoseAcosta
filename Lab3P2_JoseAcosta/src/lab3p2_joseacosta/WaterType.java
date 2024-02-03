@@ -80,7 +80,7 @@ public class WaterType extends Pokemon {
 
     @Override
     public String toString() {
-        return "WaterType:  Nombre: "+getNombre()+ " | Numero de entrada: " +getNumeroEntrada()+ " | Naturaleza: "+getNaturaleza()+ " | Atrapado: "+getAtrapado()+ " | Vive fuera del agua: "+getVivir() + " | Rapidez: " +getRapidez()+ " | Numero de serie de Pokeball: " +getPokemon().getNumeroSerie();
+        return super.toString()+" | Vive fuera del agua: "+getVivir() + " | Rapidez: " +getRapidez();
     }
     
     
