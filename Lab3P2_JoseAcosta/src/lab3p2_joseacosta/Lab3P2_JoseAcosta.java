@@ -85,7 +85,7 @@ public class Lab3P2_JoseAcosta {
                                         System.out.println("Naturaleza inválida. Por favor, ingrese timido, energetico o misterioso.");
                                     }
                                 } while (!(naturalezaAgua.equalsIgnoreCase("timido") || naturalezaAgua.equalsIgnoreCase("energetico") || naturalezaAgua.equalsIgnoreCase("misterioso")));
-                                System.out.print("Puede vivir fuera del agua(true, false)");
+                                System.out.print("Puede vivir fuera del agua(true, false): ");
                                 boolean puedeVivir = entrada.nextBoolean();
                                 System.out.print("Ingrese la rapidez: ");
                                 int rapidez = entrada.nextInt();
@@ -301,11 +301,71 @@ public class Lab3P2_JoseAcosta {
                     break;
 
                 case 5:
-                    //me tira un error de sintaxis cuando intento capturarlo xd, lo arreglo en un momento.
+                    if (pokemon.isEmpty()) {
+                        System.out.println("No hay ningún Pokemon para capturar. Ingrese en la opción 1.");
+                    } else if (pokeball.isEmpty()) {
+                        System.out.println("No hay Pokébolas disponibles para capturar Pokémon");
+                    } else {
+                        System.out.println("Pokebolas disponibles para capturar a los pokemons: ");
+                        for (int i = 0; i < pokeball.size(); i++) {
+                            System.out.println((i + 1) + ". " + pokeball.get(i).getColor() + " | Eficiencia: " + pokeball.get(i).getEficiencia());
+                        }
+                        System.out.print("Ingrese el número de su pokeball: ");
+                        int opcionPokebola = entrada.nextInt();
+
+                        if (opcionPokebola < 1 || opcionPokebola > pokeball.size()) {
+                            System.out.println("Opción de Pokébola inválida....");
+                        } else {
+                            Random r = new Random();
+                            int indicePokemon = -1;
+
+                            for (int i = 0; i < pokemon.size(); i++) {
+                                if (!pokemon.get(i).getAtrapado()) {
+                                    indicePokemon = i;
+                                    break;
+                                }
+                            }
+
+                            if (indicePokemon == -1) {
+                                System.out.println("No hay Pokemones salvajes disponibles para capturar");
+                            } else {
+                                Pokemon atrapar = pokemon.get(indicePokemon);
+                                System.out.println("¡Ha aparecido un Pokémon! Se trata de " + atrapar.getNombre());
+
+                                System.out.println("¿Deseas intentar capturarlo o huir del encuentro?");
+                                System.out.println("1. Capturarlo");
+                                System.out.println("2. Huir");
+                                System.out.print("Ingrese una opcion: ");
+                                int decision = entrada.nextInt();
+
+                                switch (decision) {
+                                    case 1:
+                                        int pokeballElegida = pokeball.get(opcionPokebola - 1).getEficiencia();
+                                        int chanceCaptura = r.nextInt(3) + 1;
+
+                                        if (chanceCaptura <= pokeballElegida) {
+                                            atrapar.setAtrapado(true);
+                                            atrapar.setPokemon(pokeball.get(opcionPokebola - 1));
+                                            System.out.println("¡Has capturado a " + atrapar.getNombre() + " con éxito!");
+                                            pokeball.remove(opcionPokebola - 1);
+                                        } else {
+                                            System.out.println("No has logrado capturar a " + atrapar.getNombre());
+                                            pokeball.remove(opcionPokebola - 1);
+                                        }
+                                        break;
+                                    case 2:
+                                        System.out.println("Has huido del encuentro!! Cobardeee");
+                                        break;
+                                    default:
+                                        System.out.println("Opción inválida. Volviendo al menú principal.");
+                                }
+                            }
+                        }
+                    }
+
                     break;
 
                 case 6:
-                    //lo tenia malo este tambien xd
                     break;
 
                 case 7:

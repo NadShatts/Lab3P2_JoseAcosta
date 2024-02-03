@@ -38,7 +38,7 @@ public class Pokemon {
         return naturaleza;
     }
 
-    public boolean isAtrapado() {
+    public boolean getAtrapado() {
         return atrapado;
     }
 
@@ -64,6 +64,11 @@ public class Pokemon {
 
     public void setPokemon(Pokeball pokemon) {
         this.pokemon = pokemon;
+    }
+
+    @Override
+    public String toString() {
+        return "Pokemon{" + "nombre=" + nombre + ", numeroEntrada=" + numeroEntrada + ", naturaleza=" + naturaleza + ", atrapado=" + atrapado + ", pokemon=" + pokemon + '}';
     }
 
    
